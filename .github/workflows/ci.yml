@@ -49,9 +49,7 @@ jobs:
         with:
           node-version: 18.x
           cache: pnpm
-        with:
           fetch-depth: 0
-
       - run: pnpm ci
       - name: Build
         run: pnpm run docs:build
