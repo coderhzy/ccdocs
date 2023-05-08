@@ -2,11 +2,22 @@
   "name": "ccdocs",
   "version": "0.0.1",
   "main": "index.js",
+  "packageManager": "pnpm@8.2.0",
   "author": "coderhzy <1257664828@qq.com>",
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.75"
   },
+  "keywords": [
+    "react 专栏",
+    "vue 专栏",
+    "TypeScript 系列",
+    "Next.js 实战",
+    "Chocolate",
+    "前端基础",
+    "前端学习路线",
+    "前端思维导图"
+  ],
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
