@@ -30,5 +30,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
-          cname: www.codehzy.cn
           publish_dir: docs/.vitepress/dist

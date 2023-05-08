@@ -6,7 +6,6 @@ import nav from "./nav";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: name,
-  outDir: "../dist",
   description,
   base: "/ccdocs/",
   lastUpdated: true,
