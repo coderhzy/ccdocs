@@ -30,8 +30,6 @@ jobs:
 
       - name: Install
         run: nci
-
-jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
