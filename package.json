@@ -2,7 +2,7 @@
   "name": "ccdocs",
   "version": "0.0.1",
   "main": "index.js",
-  "packageManager": "pnpm@8.2.0",
+  "packageManager": "pnpm@8.4.0",
   "author": "coderhzy <1257664828@qq.com>",
   "license": "MIT",
   "devDependencies": {
