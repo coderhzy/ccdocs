@@ -8,6 +8,7 @@ export default defineConfig({
   title: name,
   outDir: "../dist",
   description,
+  base: "/ccdocs/",
   lastUpdated: true,
   useWebFonts: false,
   markdown: {
