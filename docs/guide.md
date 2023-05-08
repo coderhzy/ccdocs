@@ -12,8 +12,6 @@ contributors: ["coderhzy"]
 
 ::: info 附：
 
-- [关于 ccoDocs](/ccodocs)
-
 - [学习圈子](/zsxq)
   :::
 
