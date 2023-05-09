@@ -7,7 +7,6 @@ import nav from "./nav";
 export default defineConfig({
   title: name,
   description,
-  base: "/ccdocs/",
   lastUpdated: true,
   useWebFonts: false,
   markdown: {
