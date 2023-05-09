@@ -35,7 +35,10 @@ const nav = [
   {
     text: `v${docsVersion}`,
     items: [
-      { text: "🔋 备用站点", link: "ad" },
+      {
+        text: "🔋 备用站点",
+        link: "https://main--dancing-dango-bc1810.netlify.app/",
+      },
       { text: "🧱 参与贡献", link: "/contributing" },
       { text: "🎉 更新日志", link: `${github}/releases` },
     ],
