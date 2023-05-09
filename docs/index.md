@@ -19,12 +19,25 @@ hero:
     - theme: alt
       text: 学习圈子
       link: /zsxq
+    - theme: alt
+      text: 备用站点
+      link: https://main--dancing-dango-bc1810.netlify.app/
 features:
   - icon: 📋
     title: 面试专栏
     details: 海量前端面试问题解答，一站式阅读体验。
     link: /interview/
     linkText: 开始刷题
+  - icon: 📓
+    title: 前端算法
+    details: 不再畏惧面试算法，提供刷题路线。
+    link: /algorithm/guide/
+    linkText: 开始刷题
+  - icon: 💭
+    title: 学习圈子
+    details: 打造专业的前端技术氛围社群，低调务实。
+    link: /zsxq
+    linkText: 加入圈子
 ---
 
 <script setup>

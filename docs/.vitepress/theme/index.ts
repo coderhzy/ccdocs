@@ -4,7 +4,7 @@ import { nextTick, onMounted, watch } from "vue";
 import mediumZoom from "medium-zoom";
 import "./styles/main.css";
 import "./styles/global.css";
-import "./styles/demo.css";
+// import "./styles/demo.css";
 import "./styles/utils.css";
 import "./styles/vars.css";
 

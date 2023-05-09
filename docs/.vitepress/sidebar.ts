@@ -53,34 +53,58 @@ export default {
       items: [
         { text: "Git 命令", link: "/memo/git-command/" },
         { text: "Vue实战问题", link: "/memo/vue-record/" },
+        { text: "React", link: "/memo/react/" },
+        {
+          text: "前端工程化",
+          items: [
+            { text: "webpack", link: "/memo/webpack/" },
+            { text: "vite", link: "/memo/vite/" },
+            { text: "rollup", link: "/memo/rollup/" },
+            { text: "jenkins", link: "/memo/jenkins/" },
+          ],
+        },
+        {
+          text: "React",
+          link: "/memo/react/",
+        },
+        {
+          text: "Webview",
+          link: "/memo/webview/",
+        },
+        {
+          text: "微信原生小程序",
+          link: "/memo/miniprogram/",
+        },
       ],
     },
   ],
-  "/patterns/": sidebarPartterns(),
   "/frontend/": sidebarFrontend(),
+  "/backend/": sidebarBackend(),
+  "/interview/": sidebarInterview(),
 };
 
-function sidebarPartterns() {
+// 专栏 - 面试大全
+function sidebarInterview() {
   return [
     {
-      text: "📔 前端设计模式",
+      text: "前端面试",
       collapsed: false,
-      items: [
-        { text: "导读", link: "/patterns/guide/" },
-        { text: "单例模式", link: "/patterns/singleton-pattern/" },
-        { text: "代理模式", link: "/patterns/proxy-pattern/" },
-        { text: "提供者模式", link: "/patterns/provider-pattern/" },
-        { text: "原型模式", link: "/patterns/prototype-pattern/" },
-        {
-          text: "容器/演示模式",
-          link: "/patterns/container-presentational-pattern/",
-        },
-        { text: "观察者模式", link: "/patterns/observer-pattern/" },
-        { text: "模块模式", link: "/patterns/module-pattern/" },
-        { text: "混合模式", link: "/patterns/mixin-pattern/" },
-        { text: "中介/中间件模式", link: "/patterns/middleware-pattern/" },
-        { text: "高阶组件模式", link: "/patterns/hoc-pattern/" },
-      ],
+      items: [{ text: "导读", link: "/interview/guide/" }],
+    },
+    {
+      text: "VueJs题",
+      collapsed: false,
+      items: [{ text: "导读", link: "/interview/vueJs/" }],
+    },
+    {
+      text: "CSS题",
+      collapsed: false,
+      items: [{ text: "基础题", link: "/interview/css/" }],
+    },
+    {
+      text: "JavaScript",
+      collapsed: false,
+      items: [{ text: "基础题", link: "/interview/JavaScript/" }],
     },
   ];
 }
@@ -99,6 +123,59 @@ function sidebarFrontend() {
           link: "/frontend/vue-archive/vue3-use-css-module",
         },
       ],
+    },
+    {
+      text: "🍓 React.js",
+      collapsed: false,
+      items: [
+        { text: "导读", link: "/frontend/react/" },
+        { text: "ReactJSX", link: "/frontend/react/01_JSX" },
+        { text: "React基础", link: "/frontend/react/02_React-Base" },
+        { text: "React全家桶", link: "/frontend/react/03_React-Around" },
+        { text: "ReactHooks", link: "/frontend/react/04_React-Hooks" },
+      ],
+    },
+    {
+      text: "项目搭建",
+      collapsed: false,
+      items: [
+        { text: "导读", link: "/frontend/program-management/" },
+        {
+          text: "01_Monrepo管理你的代码",
+          link: "/frontend/program-management/01_Monrepo管理你的代码",
+        },
+        {
+          text: "02_Nuxt项目部署",
+          link: "/frontend/program-management/02_Nuxt项目部署",
+        },
+        {
+          text: "03_Linux使用Clash科学上网",
+          link: "/frontend/program-management/03_Linux使用Clash科学上网",
+        },
+        {
+          text: "04_vite+vue3接入微前端",
+          link: "/frontend/program-management/04_vite+vue3接入微前端",
+        },
+        {
+          text: "05_MySQL部署问题",
+          link: "/frontend/program-management/05_MySQL部署问题",
+        },
+        {
+          text: "06_搭建React项目",
+          link: "/frontend/program-management/06_搭建React项目",
+        },
+      ],
+    },
+  ];
+}
+
+// 归档 - 后端归档
+function sidebarBackend() {
+  return [
+    {
+      text: "🍏 Node.js",
+      collapsed: false,
+      items: [{ text: "导读", link: "/backend/guide/" }],
     },
   ];
 }
