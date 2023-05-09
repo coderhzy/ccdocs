@@ -3,7 +3,7 @@ html.dark {
 }
 
 .vp-doc h2 {
-  border-top: 0;
+  border-top: 0px;
   margin-top: 10px;
 }
 
@@ -15,15 +15,21 @@ html.dark {
   padding: 3px 0 !important;
 }
 
-#app a:focus-visible,
-#app button:focus-visible,
-#app input[type="checkbox"]:focus-visible {
-  --at-apply: outline-1 outline-primary ring-2 ring-primary;
+.VPTeamPageTitle .title {
+  line-height: 32px;
+  font-size: 24px;
+  opacity: 0.5;
 }
 
-/* Vue School Banner */
-#bb-banner {
-  left: 0 !important;
-  bottom: 0 !important;
-  right: 0 !important;
+.VPTeamPageTitle .lead {
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+.medium-zoom-overlay {
+  z-index: 20;
+}
+
+.medium-zoom-image {
+  z-index: 21;
 }

@@ -10,6 +10,13 @@ const nav = [
       { text: "📋 面试大全", link: "/interview/" },
     ],
   },
+  {
+    text: "📚 归档",
+    items: [
+      { text: "📚 前端归档", link: "/frontend/guide/" },
+      { text: "📚 后端归档", link: "/backend/" },
+    ],
+  },
   // {
   //   text: "编程",
   //   items: [

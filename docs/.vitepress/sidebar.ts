@@ -57,6 +57,7 @@ export default {
     },
   ],
   "/patterns/": sidebarPartterns(),
+  "/frontend/": sidebarFrontend(),
 };
 
 function sidebarPartterns() {
@@ -79,6 +80,24 @@ function sidebarPartterns() {
         { text: "混合模式", link: "/patterns/mixin-pattern/" },
         { text: "中介/中间件模式", link: "/patterns/middleware-pattern/" },
         { text: "高阶组件模式", link: "/patterns/hoc-pattern/" },
+      ],
+    },
+  ];
+}
+
+// 归档 - 前端归档
+function sidebarFrontend() {
+  return [
+    {
+      text: "🍏 Vue.js",
+      collapsed: false,
+      items: [
+        { text: "导读", link: "/frontend/guide/" },
+        { text: "Vue3使用tsx", link: "/frontend/vue-archive/vue3-use-tsx" },
+        {
+          text: "Vue3使用cssModule",
+          link: "/frontend/vue-archive/vue3-use-css-module",
+        },
       ],
     },
   ];

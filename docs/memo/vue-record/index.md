@@ -24,3 +24,11 @@ onMounted(() => {
 ```js
 window.scrollTo({ top: 0 });
 ```
+
+## 3. 在 vue3 中使用 tsx
+
+- [Vue3 使用 tsx 语法对照](/frontend/vue-archive/vue3-use-tsx.html)
+
+## 4. 在 vue 中使用 css Modules
+
+- [Vue3 使用 tsx 语法对照](/frontend/vue-archive/vue3-use-css-module.html)
