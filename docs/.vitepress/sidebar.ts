@@ -81,6 +81,7 @@ export default {
   "/frontend/": sidebarFrontend(),
   "/backend/": sidebarBackend(),
   "/interview/": sidebarInterview(),
+  "/algorithm/": frontendAlgorithm(),
 };
 
 // 专栏 - 面试大全
@@ -176,6 +177,24 @@ function sidebarBackend() {
       text: "🍏 Node.js",
       collapsed: false,
       items: [{ text: "导读", link: "/backend/guide/" }],
+    },
+  ];
+}
+
+// 专栏 - 前端算法
+
+function frontendAlgorithm() {
+  return [
+    {
+      text: "数组",
+      collapsed: false,
+      items: [
+        { text: "导读", link: "/algorithm/guide/" },
+        {
+          text: "01_排序数组",
+          link: "/algorithm/array/01_排序数组",
+        },
+      ],
     },
   ];
 }
