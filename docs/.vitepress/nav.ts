@@ -13,7 +13,7 @@ const nav = [
   {
     text: "📚 归档",
     items: [
-      { text: "📚 前端归档", link: "/frontend/guide/" },
+      { text: "📚 前端归档", link: "/frontend/javascript/" },
       { text: "🔙 后端归档", link: "/backend/guide/" },
       { text: "🌈 好文收录", link: "/goodArticle/guide/" },
     ],

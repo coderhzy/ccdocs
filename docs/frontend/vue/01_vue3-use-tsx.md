@@ -24,8 +24,8 @@ github：[babel-plugin-jsx](https://links.jianshu.com/go?to=https%3A%2F%2Fgithub
 
 ```js
 module.exports = {
-    presets: ["@vue/cli-plugin-babel/preset"],
-    plugins: ["@vue/babel-plugin-jsx"],
+  presets: ["@vue/cli-plugin-babel/preset"],
+  plugins: ["@vue/babel-plugin-jsx"],
 };
 ```
 
@@ -35,14 +35,14 @@ module.exports = {
 tsx 文件就相当一个 ts 文件，里面都是 ts 代码，不能像 vue 文件一样出现 html 和 css，我们在 tsx 文件中返回一个组件
 
 ```js
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
-    setup() {
-        return () => {
-            return <div>hello tsx</div>;
-        };
-    },
+  setup() {
+    return () => {
+      return <div>hello tsx</div>;
+    };
+  },
 });
 ```
 
@@ -56,25 +56,25 @@ setup 如果返回一个函数，那么这个函数就是 render 函数，然后
 上面说到 tsx 写法上就是把 template 转移到 render 函数中，defineComponent 的其他配置，与 setup 其他参数与用法无区别：
 
 ```js
-import {defineComponent, ref, reactive} from "vue";
+import { defineComponent, ref, reactive } from "vue";
 
 export default defineComponent({
-    props: {},
-    setup(props) {
-        const msg = ref("hello tsx");
-        const state = reactive({
-            count: 1,
-        });
+  props: {},
+  setup(props) {
+    const msg = ref("hello tsx");
+    const state = reactive({
+      count: 1,
+    });
 
-        return () => {
-            return (
-                <div>
-                    {msg.value}
-                    <span>{state.count}</span>
-                </div>
-            );
-        };
-    },
+    return () => {
+      return (
+        <div>
+          {msg.value}
+          <span>{state.count}</span>
+        </div>
+      );
+    };
+  },
 });
 ```
 
@@ -118,11 +118,11 @@ export default defineComponent({
 import TestCom from "./test-com.vue";
 
 export default defineComponent({
-    setup() {
-        return () => {
-            return <TestCom></TestCom>;
-        };
-    },
+  setup() {
+    return () => {
+      return <TestCom></TestCom>;
+    };
+  },
 });
 ```
 
@@ -355,14 +355,14 @@ import "./style.css";
 claas，例如：
 
 ```js
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
-    setup() {
-        return () => {
-            return <div class="moudle-file-component-wrapper"></div>;
-        };
-    },
+  setup() {
+    return () => {
+      return <div class="moudle-file-component-wrapper"></div>;
+    };
+  },
 });
 ```
 
@@ -370,7 +370,7 @@ export default defineComponent({
 
 如果要保险规避，达到 vue 文件 scoped 的效果，可以参考博主之前的一篇文章：
 
-- [vue3+ts jsx 写法 css module 处理方案](/frontend/vue-archive/vue3-use-css-module.html)
+- [vue3+ts jsx 写法 css module 处理方案](/frontend/vue/02_vue3-use-css-module.html)
 
 #### 动态 class 写法
 
@@ -437,14 +437,14 @@ setup()
 setup 里面 return 就行：
 
 ```js
-setup()
+setup();
 {
-    return {
-        fn1,
-        fn2
-    }
+  return {
+    fn1,
+    fn2,
+  };
 }
-这样父组件用ref引用后就可以直接调用
+这样父组件用ref引用后就可以直接调用;
 ```
 
 那在 tsx 文件中怎么暴露呢，setup 已经返回了一个 render 函数，里面返回我们的组件模版，处理方法就是将 render 函数和 setup
@@ -456,75 +456,75 @@ render 函数与单独编写 render 函数的写法：
 setup 返回函数写法：
 
 ```js
-import {defineComponent, ref, reactive} from "vue";
+import { defineComponent, ref, reactive } from "vue";
 
 export default defineComponent({
-    props: {
-        name: {
-            type: String,
-            default: "超人鸭",
-        },
+  props: {
+    name: {
+      type: String,
+      default: "超人鸭",
     },
-    setup(props) {
-        const msg = ref("hello tsx");
-        const state = reactive({
-            count: 1,
-        });
+  },
+  setup(props) {
+    const msg = ref("hello tsx");
+    const state = reactive({
+      count: 1,
+    });
 
-        const handleClick = () => {
-            console.log("click");
-        };
+    const handleClick = () => {
+      console.log("click");
+    };
 
-        return () => {
-            return (
-                <div onClick={handleClick}>
-                    {msg.value}
-                    <span>{state.count}</span>
-                    <span>{props.name}</span>
-                </div>
-            );
-        };
-    },
+    return () => {
+      return (
+        <div onClick={handleClick}>
+          {msg.value}
+          <span>{state.count}</span>
+          <span>{props.name}</span>
+        </div>
+      );
+    };
+  },
 });
 ```
 
 单独编写 render 函数写法：
 
 ```js
-import {defineComponent, ref, reactive} from "vue";
+import { defineComponent, ref, reactive } from "vue";
 
 export default defineComponent({
-    props: {
-        name: {
-            type: String,
-            default: "超人鸭",
-        },
+  props: {
+    name: {
+      type: String,
+      default: "超人鸭",
     },
-    setup(props) {
-        const msg = ref("hello tsx");
-        const state = reactive({
-            count: 1,
-        });
+  },
+  setup(props) {
+    const msg = ref("hello tsx");
+    const state = reactive({
+      count: 1,
+    });
 
-        const handleClick = () => {
-            console.log("click");
-        };
+    const handleClick = () => {
+      console.log("click");
+    };
 
-        return {
-            msg,
-            state,
-            handleClick,
-        };
-    },
-    render() {
-        return (
-            <div onClick={this.handleClick}>
-                {this.msg.value}
-                <span>{this.state.count}</span>
-                <span>{this.name}</span>
-            </div>
-        );
-    },
+    return {
+      msg,
+      state,
+      handleClick,
+    };
+  },
+  render() {
+    return (
+      <div onClick={this.handleClick}>
+        {this.msg.value}
+        <span>{this.state.count}</span>
+        <span>{this.name}</span>
+      </div>
+    );
+  },
 });
 ```
 
@@ -539,28 +539,28 @@ setup 中的变量要 return，render 中使用要使用 this，props 数据会�
 在 render 函数中使用 ref 变量引用组件，写法会有点违背常规思路，这个问题是我使用 tsx 被坑得最厉害的问题
 
 ```js
-import {defineComponent, ref} from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-    setup() {
-        const elTableCom = ref < any > null;
+  setup() {
+    const elTableCom = ref < any > null;
 
-        const handle = () => {
-            console.log("click");
-        };
+    const handle = () => {
+      console.log("click");
+    };
 
-        return {
-            handle,
-            elTableCom,
-        };
-    },
-    render() {
-        return (
-            <div>
-                <el-table ref="elTableCom"></el-table>
-            </div>
-        );
-    },
+    return {
+      handle,
+      elTableCom,
+    };
+  },
+  render() {
+    return (
+      <div>
+        <el-table ref="elTableCom"></el-table>
+      </div>
+    );
+  },
 });
 ```
 
@@ -574,14 +574,16 @@ export default defineComponent({
 但是 tsx 要求必须有一个根标签包裹，如果不想要这个根标签可以使用：
 
 ```js
-setup()
+setup();
 {
-    return () => {
-        return <>
-            <div></div>
-            <div></div>
-        </>
-    }
+  return () => {
+    return (
+      <>
+        <div></div>
+        <div></div>
+      </>
+    );
+  };
 }
 ```
 
@@ -607,14 +609,14 @@ vue 文件使用递归组件是通过 name 属性来引用自己：
 tsx 文件使用引用变量的方式
 
 ```js
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 
 const TestCom = defineComponent({
-    setup() {
-        return () => {
-            return <TestCom></TestCom>;
-        };
-    },
+  setup() {
+    return () => {
+      return <TestCom></TestCom>;
+    };
+  },
 });
 
 export default TestCom;
@@ -705,15 +707,15 @@ export default TestCom;
 
 ```js
 <template>
-    <div>
-        <p>父组件</p>
-        <children>
-            <p>父组件插入内容至子组件：默认插槽</p>
-            <template v-slot:chaoren>
-                <p>父组件插入内容至子组件：具名插槽</p>
-            </template>
-        </children>
-    </div>
+  <div>
+    <p>父组件</p>
+    <children>
+      <p>父组件插入内容至子组件：默认插槽</p>
+      <template v-slot:chaoren>
+        <p>父组件插入内容至子组件：具名插槽</p>
+      </template>
+    </children>
+  </div>
 </template>
 ```
 
@@ -725,17 +727,17 @@ export default TestCom;
 
 ```js
 <template>
-    <div>
-        <p>父组件</p>
-        <children>
-            <template v-slot:default>
-                <p>父组件插入内容至子组件：默认插槽</p>
-            </template>
-            <template v-slot:chaoren>
-                <p>父组件插入内容至子组件：具名插槽</p>
-            </template>
-        </children>
-    </div>
+  <div>
+    <p>父组件</p>
+    <children>
+      <template v-slot:default>
+        <p>父组件插入内容至子组件：默认插槽</p>
+      </template>
+      <template v-slot:chaoren>
+        <p>父组件插入内容至子组件：具名插槽</p>
+      </template>
+    </children>
+  </div>
 </template>
 ```
 
@@ -781,39 +783,39 @@ export default TestCom;
 还是基于上面的 children 组件，同时包含默认插槽，具名插槽，作用域插槽，下面展示一下一起用这三种插槽的写法：
 
 ```js
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 import Children from "./children.vue";
 
 export default defineComponent({
-    setup() {
-        const childrenSlot = {
-            default: () => {
-                return <p>父组件插入内容至子组件：默认插槽</p>;
-            },
-            chaoren: () => {
-                return <p>父组件插入内容至子组件：具名插槽</p>;
-            },
-            ya: (scope: any) => {
-                return (
-                    <>
-                        <p>父组件插入内容至子组件：作用域插槽</p>
-                        {scope.list.map((item: any) => {
-                            return <p key={item}>{item}</p>;
-                        })}
-                    </>
-                );
-            },
-        };
+  setup() {
+    const childrenSlot = {
+      default: () => {
+        return <p>父组件插入内容至子组件：默认插槽</p>;
+      },
+      chaoren: () => {
+        return <p>父组件插入内容至子组件：具名插槽</p>;
+      },
+      ya: (scope: any) => {
+        return (
+          <>
+            <p>父组件插入内容至子组件：作用域插槽</p>
+            {scope.list.map((item: any) => {
+              return <p key={item}>{item}</p>;
+            })}
+          </>
+        );
+      },
+    };
 
-        return () => {
-            return (
-                <div>
-                    <p>父组件</p>
-                    <Children v-slots={childrenSlot}></Children>
-                </div>
-            );
-        };
-    },
+    return () => {
+      return (
+        <div>
+          <p>父组件</p>
+          <Children v-slots={childrenSlot}></Children>
+        </div>
+      );
+    };
+  },
 });
 ```
 
@@ -826,30 +828,30 @@ tsx 文件使用插槽是传入一个对象，每一个插槽都是一个方法�
 上面的子组件使用 vue 文件写的，下面看一下在 tsx 文件中如果定义插槽，供父组件使用：
 
 ```js
-import {defineComponent, reactive} from "vue";
+import { defineComponent, reactive } from "vue";
 
 export default defineComponent({
-    setup(props, {slots}) {
-        const state = reactive({
-            list: ["超人", "鸭"],
-        });
+  setup(props, { slots }) {
+    const state = reactive({
+      list: ["超人", "鸭"],
+    });
 
-        return () => {
-            return (
-                <div>
-                    <p>子组件</p>
-                    {/* 这是默认插槽 */}
-                    {slots.default ? slots.default() : null}
+    return () => {
+      return (
+        <div>
+          <p>子组件</p>
+          {/* 这是默认插槽 */}
+          {slots.default ? slots.default() : null}
 
-                    {/* 这是具名插槽 */}
-                    {slots.chaoren ? slots.chaoren() : null}
+          {/* 这是具名插槽 */}
+          {slots.chaoren ? slots.chaoren() : null}
 
-                    {/* 这是作用域插槽 */}
-                    {slots.ya ? slots.ya({list: state.list}) : null}
-                </div>
-            );
-        };
-    },
+          {/* 这是作用域插槽 */}
+          {slots.ya ? slots.ya({ list: state.list }) : null}
+        </div>
+      );
+    };
+  },
 });
 ```
 
@@ -860,39 +862,39 @@ dom，所以上面的子组件就是将外部传入的函数进行执行，渲�
 父组件引用：
 
 ```js
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 import Children from "./children";
 
 export default defineComponent({
-    setup() {
-        const childrenSlot = {
-            default: () => {
-                return <p>父组件插入内容至子组件：默认插槽</p>;
-            },
-            chaoren: () => {
-                return <p>父组件插入内容至子组件：具名插槽</p>;
-            },
-            ya: (scope: any) => {
-                return (
-                    <>
-                        <p>父组件插入内容至子组件：作用域插槽</p>
-                        {scope.list.map((item: any) => {
-                            return <p key={item}>{item}</p>;
-                        })}
-                    </>
-                );
-            },
-        };
+  setup() {
+    const childrenSlot = {
+      default: () => {
+        return <p>父组件插入内容至子组件：默认插槽</p>;
+      },
+      chaoren: () => {
+        return <p>父组件插入内容至子组件：具名插槽</p>;
+      },
+      ya: (scope: any) => {
+        return (
+          <>
+            <p>父组件插入内容至子组件：作用域插槽</p>
+            {scope.list.map((item: any) => {
+              return <p key={item}>{item}</p>;
+            })}
+          </>
+        );
+      },
+    };
 
-        return () => {
-            return (
-                <div>
-                    <p>父组件</p>
-                    <Children v-slots={childrenSlot}></Children>
-                </div>
-            );
-        };
-    },
+    return () => {
+      return (
+        <div>
+          <p>父组件</p>
+          <Children v-slots={childrenSlot}></Children>
+        </div>
+      );
+    };
+  },
 });
 ```
 
