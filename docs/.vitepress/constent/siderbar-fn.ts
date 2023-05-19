@@ -128,6 +128,21 @@ export function sidebarFrontend() {
           text: "02_闭包模型-内存泄漏",
           link: "/frontend/javascript/02_closure",
         },
+        {
+          text: "03_this",
+          link: "/frontend/javascript/03_this",
+        },
+      ],
+    },
+    {
+      text: "🍉 TypeScript",
+      collapsed: false,
+      items: [
+        { text: "导读", link: "/frontend/typeScript/" },
+        {
+          text: "原始类型和对象类型",
+          link: "/frontend/typeScript/01_原始类型和对象类型",
+        },
       ],
     },
     {
