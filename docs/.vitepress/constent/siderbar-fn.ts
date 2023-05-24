@@ -132,6 +132,18 @@ export function sidebarFrontend() {
           text: "03_this",
           link: "/frontend/javascript/03_this",
         },
+        {
+          text: "04_纯函数和柯里化函数",
+          link: "/frontend/javascript/04_PureFunctionCurryFunction",
+        },
+        {
+          text: "05_严格模式和面向对象",
+          link: "/frontend/javascript/05_strict&OO",
+        },
+        {
+          text: "06_原型链",
+          link: "/frontend/javascript/06_protolink",
+        },
       ],
     },
     {
