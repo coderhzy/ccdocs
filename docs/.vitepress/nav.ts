@@ -11,10 +11,17 @@ const nav = [
     ],
   },
   {
+    text: "🚀 实战项目",
+    items: [
+      { text: "🚀 Vue3实战", link: "/practicalProject/vue3/guide/" },
+      { text: "🚀 React实战", link: "/practicalProject/react/guide/" },
+    ],
+  },
+  {
     text: "📚 归档",
     items: [
       { text: "📚 前端归档", link: "/frontend/javascript/" },
-      { text: "🔙 后端归档", link: "/backend/guide/" },
+      { text: "🔙 后端归档", link: "/backend/nodejs/" },
       { text: "🌈 好文收录", link: "/goodArticle/guide/" },
     ],
   },

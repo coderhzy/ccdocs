@@ -220,7 +220,15 @@ export function sidebarBackend() {
     {
       text: "🍏 Node.js",
       collapsed: false,
-      items: [{ text: "导读", link: "/backend/guide/" }],
+      items: [{ text: "导读", link: "/backend/nodejs/" }],
+    },
+    {
+      text: "🍓 Nest.js",
+      collapsed: false,
+      items: [
+        { text: "导读", link: "/backend/nest/" },
+        { text: "01_为什么是nestjs", link: "/backend/nest/01_为什么是nestjs" },
+      ],
     },
   ];
 }
