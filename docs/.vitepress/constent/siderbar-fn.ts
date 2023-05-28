@@ -144,6 +144,14 @@ export function sidebarFrontend() {
           text: "06_原型链",
           link: "/frontend/javascript/06_protolink&inherit",
         },
+        {
+          text: "07_Es6类",
+          link: "/frontend/javascript/07_es6-class",
+        },
+        {
+          text: "08_es6知识",
+          link: "/frontend/javascript/08_es6知识",
+        },
       ],
     },
     {
