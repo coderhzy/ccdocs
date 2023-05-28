@@ -142,7 +142,7 @@ export function sidebarFrontend() {
         },
         {
           text: "06_原型链",
-          link: "/frontend/javascript/06_protolink",
+          link: "/frontend/javascript/06_protolink&inherit",
         },
       ],
     },

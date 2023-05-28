@@ -3,20 +3,60 @@
 ## 1. 在 script setup 中优雅的使用动态组件
 
 ```js
-<component :is="activeTabComponent"></component>
+<template>
+  <div>
+    <div class="tab-container-header">
+      <div class="tab-container-header-item" v-for="(item, index) in tabList" :key="index" @click="selectTab(index)">
+        <span :class="{ active: item.isActive }">{{ item.name }}</span>
+      </div>
+    </div>
+    <component :is="activeTabComponent" :tabContenxtSrc="tabContenxtSrc"></component>
+  </div>
+</template>
 
-const tabList = shallowRef([
-  { name: 'tab1', isActive: false, component: defineAsyncComponent(() => import('@/components/tab1.vue')) },
-  { name: 'tab2', isActive: false, component: defineAsyncComponent(() => import('@/components/tab2.vue')) },
+<script lang="ts" setup>
+import { selectGroupConfig } from '@/api/getAliveRoomCollection'
+import { computed, defineAsyncComponent, markRaw, onMounted, ref, watchEffect } from 'vue'
+import { useRouter } from 'vue-router'
+
+const activeTab = ref(0)
+const route = useRouter()
+
+const tabName = ref('精选')
+const tabContenxtSrc = ref('')
+
+const tabList = ref([
+  { name: '直播介绍', isActive: false, component: markRaw(defineAsyncComponent(() => import('@/views/Introduction.vue'))) },
+  { name: '互动', isActive: false, component: markRaw(defineAsyncComponent(() => import('@/views/Chat.vue'))) },
+  { name: tabName.value, isActive: false, component: markRaw(defineAsyncComponent(() => import('@/views/Featured.vue'))) },
 ])
 
 const activeTabComponent = computed(() => {
   return tabList.value[activeTab.value].component
 })
 
+const selectTab = (index: number) => {
+  tabList.value.forEach((item, i) => {
+    item.isActive = i === index
+  })
+  activeTab.value = index
+}
+
+// 直播间配置id
+const id = route.currentRoute.value.query.id
+
+watchEffect(async () => {
+  const result = await selectGroupConfig<{ tabName: string ,tabImage:string}>(String(id))
+  console.log("🚀 ~ file: HomeView.vue:45 ~ watchEffect ~ result:", result)
+  tabName.value = result.tabName
+  tabContenxtSrc.value = result.tabImage
+  tabList.value[2].name = tabName.value
+})
+
 onMounted(() => {
   tabList.value[0].isActive = true
 })
+</script>
 ```
 
 ## 2. 怎样滚动到页面顶部
