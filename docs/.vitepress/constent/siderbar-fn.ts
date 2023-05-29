@@ -149,8 +149,8 @@ export function sidebarFrontend() {
           link: "/frontend/javascript/07_es6-class",
         },
         {
-          text: "08_es6知识",
-          link: "/frontend/javascript/08_es6知识",
+          text: "08_es6&es7知识",
+          link: "/frontend/javascript/08_es6&es7知识",
         },
       ],
     },
