@@ -10,3 +10,4 @@
 - [6. 原型链和继承](/frontend/javascript/06_protolink&inherit.html)
 - [7. es6类](/frontend/javascript/07_es6-class.html)
 - [8. es6&es7知识](/frontend/javascript/08_es6&es7知识.html)
+- [8. es++知识](/frontend/javascript/09_es++知识.html)

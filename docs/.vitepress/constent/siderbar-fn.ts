@@ -152,6 +152,10 @@ export function sidebarFrontend() {
           text: "08_es6&es7知识",
           link: "/frontend/javascript/08_es6&es7知识",
         },
+        {
+          text: "09_es++知识",
+          link: "/frontend/javascript/09_es++知识",
+        },
       ],
     },
     {
