@@ -156,6 +156,14 @@ export function sidebarFrontend() {
           text: "09_es++知识",
           link: "/frontend/javascript/09_es++知识",
         },
+        {
+          text: "10_Proxy",
+          link: "/frontend/javascript/10_proxy",
+        },
+        {
+          text: "11_响应式原理",
+          link: "/frontend/javascript/11_reactive",
+        },
       ],
     },
     {
