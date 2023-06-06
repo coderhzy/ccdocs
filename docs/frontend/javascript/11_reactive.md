@@ -7,7 +7,7 @@
 ### 0.1 响应式函数的封装
 ```js
 const reactiveFns = []
-watchFn(fn) {  }
+watchFn(fn){  }
 ```
 
 ### 0.2 Depend 类的封装
@@ -33,7 +33,7 @@ class Depend {
 ### 0.3 监听对象的变化
 
 ```js
-new Proxy(, set: depend.notify())
+new Proxy(obj, set: depend.notify())
 ```
 
 ### 0.4 依赖收集的数据结构

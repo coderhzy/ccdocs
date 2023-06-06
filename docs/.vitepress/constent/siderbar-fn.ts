@@ -1,12 +1,12 @@
 // 首页
 export function rootDir() {
-  const rootDirList = [
+  return [
     {
       text: "开始阅读",
       collapsed: false,
       items: [
-        { text: "阅读须知", link: "/guide" },
-        { text: "学习圈子", link: "/zsxq" },
+        {text: "阅读须知", link: "/guide"},
+        {text: "学习圈子", link: "/zsxq"},
         // {
         //   text: "23 年每周学习动态",
         //   items: [
@@ -40,28 +40,28 @@ export function rootDir() {
       text: "📘 TS 学习",
       collapsed: false,
       items: [
-        { text: "导读", link: "/ts/ch" },
-        { text: "环境配置", link: "/ts/ch0" },
-        { text: "基础操作", link: "/ts/ch1" },
-        { text: "工具类", link: "/ts/ch2" },
-        { text: "函数系统", link: "/ts/ch3" },
-        { text: "泛型", link: "/ts/ch4" },
+        {text: "导读", link: "/ts/ch"},
+        {text: "环境配置", link: "/ts/ch0"},
+        {text: "基础操作", link: "/ts/ch1"},
+        {text: "工具类", link: "/ts/ch2"},
+        {text: "函数系统", link: "/ts/ch3"},
+        {text: "泛型", link: "/ts/ch4"},
       ],
     },
     {
       text: "📝 备忘录",
       collapsed: false,
       items: [
-        { text: "Git 命令", link: "/memo/git-command/" },
-        { text: "Vue实战问题", link: "/memo/vue-record/" },
-        { text: "React", link: "/memo/react/" },
+        {text: "Git 命令", link: "/memo/git-command/"},
+        {text: "Vue实战问题", link: "/memo/vue-record/"},
+        {text: "React", link: "/memo/react/"},
         {
           text: "前端工程化",
           items: [
-            { text: "webpack", link: "/memo/webpack/" },
-            { text: "vite", link: "/memo/vite/" },
-            { text: "rollup", link: "/memo/rollup/" },
-            { text: "jenkins", link: "/memo/jenkins/" },
+            {text: "webpack", link: "/memo/webpack/"},
+            {text: "vite", link: "/memo/vite/"},
+            {text: "rollup", link: "/memo/rollup/"},
+            {text: "jenkins", link: "/memo/jenkins/"},
           ],
         },
         {
@@ -83,7 +83,6 @@ export function rootDir() {
       ],
     },
   ];
-  return rootDirList;
 }
 
 // 专栏 - 面试大全
@@ -163,6 +162,18 @@ export function sidebarFrontend() {
         {
           text: "11_响应式原理",
           link: "/frontend/javascript/11_reactive",
+        },
+        {
+          text: "12_Promise",
+          link: "/frontend/javascript/12_promise",
+        },
+        {
+          text: "13_iterator",
+          link: "/frontend/javascript/13_iterator",
+        },
+        {
+          text: "14_async-await",
+          link: "/frontend/javascript/14_async-await",
         },
       ],
     },

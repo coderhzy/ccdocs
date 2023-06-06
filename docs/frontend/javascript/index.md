@@ -13,3 +13,6 @@
 - [9. es++知识](/frontend/javascript/09_es++知识.html)
 - [10. Proxy](/frontend/javascript/10_proxy.html)
 - [11. 响应式原理](/frontend/javascript/11_reactive.html)
+- [12. promise](/frontend/javascript/12_promise.html)
+- [13. iterator](/frontend/javascript/13_iterator.html)
+- [14_async-await](/frontend/javascript/14_async-await)
