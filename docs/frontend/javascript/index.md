@@ -20,3 +20,5 @@
 - [16. throw-Error](/frontend/javascript/16_throw-Error)
 - [17. JS-module](/frontend/javascript/17_JS-module)
 - [18. package-management](/frontend/javascript/18_package-management)
+- [19. JSON-serialization](/frontend/javascript/19_JSON-serialization)
+- [20. browser-storage](/frontend/javascript/20_browser-storage)
