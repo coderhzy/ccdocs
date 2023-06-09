@@ -45,35 +45,44 @@ emphasis: {
 
 ```js
 watch(
-  [
-    oilCloseD.BList,
-    oilCloseD.WList,
-    oilCloseD.date,
-    pmRatioD.DList,
-    pmRatioD.GList,
-    averageD.FList,
-    averageD.TList,
-    averageD.ZList,
-  ],
-  () => {
-    myChart.setOption(options);
+    [oilCloseD.BList, oilCloseD.WList, oilCloseD.date, pmRatioD.DList, pmRatioD.GList, averageD.FList, averageD.TList, averageD.ZList],
+    () => {
+        myChart.setOption(options)
+        const dataList = options.series.map(item => {
+            if (item) return item.data.length
+            return 0
+        })
 
-    // 选中最后一个点
-    myChart.dispatchAction({
-      type: "showTip",
-      seriesIndex: 0,
-      dataIndex: lastIndex.value, // 显示第几个数据
-    });
-  }
-);
+        updateHighlight(Math.max(...dataList) - 1)
+
+        setTimeout(() => {
+            myChart.dispatchAction({
+                type: 'showTip',
+                seriesIndex: 0,
+                dataIndex: Math.max(...dataList) - 1, // 显示第几个数据
+            })
+
+            myChart.dispatchAction({
+                type: 'highlight',
+                seriesIndex: 0,
+                dataIndex: Math.max(...dataList) - 1, // 显示第几个数据
+            })
+        }, 100)
+    }
+)
 ```
 
 ## 4. 计算滑动到了哪一个点(Index)
+
+- 组件挂在的时候执行
 
 ```js
 if (main.value !== undefined) {
   myChart = echarts.init(main.value);
 }
+
+// 绘制图表
+myChart.setOption(options)
 
 // 记录滑动的最后一个索引，使tooltip常显
 myChart
@@ -118,23 +127,53 @@ myChart
   </div>
 ```
 
+- 将这段updateHighlight函数放到第三点的watch里面初始化的时候进行设置
+
 ```js
 // 监听图标滑动高亮事件,修改图例值
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-myChart.on("highlight", (params: any) => {
-  const index = params.batch[0].dataIndex;
-  legend.date = controlShowData(type.value).date[index];
-  legend.list = [
-    {
-      name: "qwe",
-      value: oilCloseD.WList[index],
-    },
-    {
-      name: "asd",
-      value: oilCloseD.BList[index],
-    },
-  ];
-});
+const updateHighlight = (index: number) => {
+    legend.date = controlShowData(type.value).date[index]
+    if (type.value === '1') {
+        legend.list = [
+            {
+                name: 'WTI：',
+                value: oilCloseD.WList[index],
+            },
+            {
+                name: '布伦特：',
+                value: oilCloseD.BList[index],
+            },
+        ]
+    } else if (type.value === '2') {
+        legend.list = [
+            {
+                name: '柴油：',
+                value: pmRatioD.DList[index],
+            },
+            {
+                name: '汽油：',
+                value: pmRatioD.GList[index],
+            },
+        ]
+    } else {
+        legend.list = [
+            {
+                name: '0#柴油：',
+                value: averageD.ZList[index],
+            },
+            {
+                name: '95#汽油：',
+                value: averageD.FList[index],
+            },
+            {
+                name: '92#汽油：',
+                value: averageD.TList[index],
+            },
+        ]
+    }
+}
+
+
 ```
 
 ## 6. echarts 图表自适应
@@ -193,5 +232,132 @@ window.onresize = function () {
     line-height: 24px;
     margin-left: 7px;
   }
+}
+```
+
+## 8. 完整的配置
+
+```js
+const options = {
+  tooltip: {
+    show: true,
+    trigger: 'axis',
+    showContent: false,
+    axisPointer: { z: 100, lineStyle: { type: 'solid', width: 0.5, color: '#E8A000' } },
+  },
+  yAxis: {
+    splitNumber: 3,
+    scale: true,
+    splitLine: {
+      lineStyle: {
+        color: '#282828',
+        type: 'dashed',
+      },
+    },
+    axisLabel: {
+      color: '#555555',
+      fontSize: 10,
+      align: 'right',
+    },
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    scale: true,
+    position: 'bottom',
+    axisTick: {
+      show: false,
+    },
+    axisLine: {
+      onZero: false,
+      lineStyle: {
+        color: '#2A2928',
+        height: 1,
+      },
+    },
+    axisLabel: {
+      show: false,
+    },
+    data: type.value === '1' ? oilCloseD.date : type.value === '2' ? pmRatioD.date : averageD.date,
+  },
+  grid: {
+    x: 5,
+    y: 15,
+    x2: 5,
+    y2: 25,
+    containLabel: true,
+  },
+  series: [
+    {
+      name: type.value === '1' ? 'WTI' : type.value === '2' ? '汽油' : '92#汽油',
+      type: 'line',
+      symbolSize: 5,
+      showSymbol: false,
+      data: type.value === '1' ? oilCloseD.WList : type.value === '2' ? pmRatioD.GList : averageD.TList,
+      lineStyle: {
+        normal: {
+          color: type.value == '3' ? '#1DA840' : type.value == '1' ? '#4983F5' : '#F26F11',
+          width: 2,
+        },
+      },
+      emphasis: {
+        disabled: true,
+        itemStyle: {
+          color: type.value == '3' ? '#1DA840' : type.value == '1' ? '#4983F5' : '#F26F11',
+          borderWidth: 0,
+          lineStyle: {
+            width: 2,
+          },
+        },
+      },
+    },
+    {
+      name: type.value === '1' ? '布伦特' : type.value === '2' ? '柴油' : '95#汽油',
+      type: 'line',
+      symbolSize: 5,
+      showSymbol: false,
+      data: type.value === '1' ? oilCloseD.BList : type.value === '2' ? pmRatioD.DList : averageD.FList,
+      lineStyle: {
+        normal: {
+          color: type.value == '3' ? '#F26F11' : type.value == '1' ? '#F26F11' : '#4983F5',
+          width: 2,
+        },
+      },
+      emphasis: {
+        disabled: true,
+        itemStyle: {
+          color: type.value == '3' ? '#F26F11' : type.value == '1' ? '#F26F11' : '#4983F5',
+          borderWidth: 0,
+          lineStyle: {
+            width: 2,
+          },
+        },
+      },
+    },
+    type.value === '3' && {
+      name: '0#柴油',
+      type: 'line',
+      symbolSize: 5,
+      showSymbol: false,
+      data: averageD.ZList,
+      lineStyle: {
+        normal: {
+          color: '#4983F5',
+          width: 2,
+        },
+      },
+      emphasis: {
+        disabled: true,
+        itemStyle: {
+          color: '#4983F5',
+          borderWidth: 0,
+          lineStyle: {
+            width: 2,
+          },
+        },
+      },
+    },
+  ],
+  animationDuration: 100,
 }
 ```

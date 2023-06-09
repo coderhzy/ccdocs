@@ -168,12 +168,28 @@ export function sidebarFrontend() {
           link: "/frontend/javascript/12_promise",
         },
         {
-          text: "13_iterator",
+          text: "13_iterator(迭代器)",
           link: "/frontend/javascript/13_iterator",
         },
         {
           text: "14_async-await",
           link: "/frontend/javascript/14_async-await",
+        },
+        {
+          text: "15_event-loop",
+          link: "/frontend/javascript/15_event-loop",
+        },
+        {
+          text: "16_错误捕获",
+          link: "/frontend/javascript/16_throw-Error",
+        },
+        {
+          text: "17_JavaScript-模块化",
+          link: "/frontend/javascript/17_JS-module",
+        },
+        {
+          text: "18_包管理",
+          link: "/frontend/javascript/18_package-management",
         },
       ],
     },
