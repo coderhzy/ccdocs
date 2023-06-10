@@ -13,18 +13,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
+      - name: Install yarn
+        uses: yarn/action-setup@v2
 
       - name: Set node
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
+          cache: yarn
+      - run: yarn install --frozen-lockfile
 
       - name: Build
-        run: pnpm docs:build
+        run: yarn docs:build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
