@@ -291,10 +291,21 @@ export function sidebarBackend() {
 export function frontendAlgorithm() {
   return [
     {
+      text: "常见题",
+      collapsed: false,
+      items: [
+        { text: "开篇", link: "/algorithm/guide/" },
+        {
+          text: "01_两数之和",
+          link: "/algorithm/常见算法/01_两数之和",
+        },
+      ],
+    },
+    {
       text: "数组",
       collapsed: false,
       items: [
-        { text: "导读", link: "/algorithm/guide/" },
+        { text: "快捷导航", link: "/algorithm/guide/" },
         {
           text: "01_排序数组",
           link: "/algorithm/array/01_排序数组",
