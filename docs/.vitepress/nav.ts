@@ -5,7 +5,7 @@ const nav = [
   {
     text: "🔥 专栏",
     items: [
-      { text: "🔥 前端算法", link: "/algorithm/guide/" },
+      { text: "🔥 前端算法", link: "/algorithm/常见算法/" },
       // {text: "🔥 设计模式", link: "/patterns/guide/"},
       { text: "📋 面试大全", link: "/interview/guide/" },
     ],
