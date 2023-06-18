@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="20_防抖.js"></script>
+
+    <input type="text" />
+    <button id="cancel">取消</button>
+
+    <script>
+        let input = document.querySelector('input')
+        let counter = 0;
+
+        const inputChange = function(e) {
+            console.log(`发送了第${++counter}次网络请求`, this, e)
+
+            return 'asdasd'
+        }
+
+        const debounceChange = debounce(inputChange, 1000, true,(result) => {
+            console.log('拿到真正执行函数的返回值', result)
+        })
+
+        const tempCallback = () => {
+            debounceChange().then(res => {
+                console.log('promise拿到的返回值', res)
+            })
+        }
+
+        input.addEventListener('input', tempCallback)
+
+        const cancelBtn = document.querySelector('#cancel')
+        cancelBtn.onclick = function(){
+            debounceChange.cancel()
+        }
+    </script>
+</body>
+
+</html>

@@ -22,3 +22,5 @@
 - [18. package-management](/frontend/javascript/18_package-management)
 - [19. JSON-serialization](/frontend/javascript/19_JSON-serialization)
 - [20. browser-storage](/frontend/javascript/20_browser-storage)
+- [21. BOM和DOM](/frontend/javascript/21_BOM和DOM)
+- [22. 防抖和节流](/frontend/javascript/22_防抖和节流)

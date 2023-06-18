@@ -192,11 +192,20 @@ export function sidebarFrontend() {
           link: "/frontend/javascript/18_package-management",
         },
         {
-          text: "18_JSON详解",
+          text: "19_JSON详解",
           link: "/frontend/javascript/19_JSON-serialization",
-        },        {
-          text: "19_浏览器存储",
+        },
+        {
+          text: "20_浏览器存储",
           link: "/frontend/javascript/20_browser-storage",
+        },
+        {
+          text: "21_BOM和DOM",
+          link: "/frontend/javascript/21_BOM和DOM",
+        },
+        {
+          text: "22_防抖和节流",
+          link: "/frontend/javascript/22_防抖和节流",
         },
       ],
     },
