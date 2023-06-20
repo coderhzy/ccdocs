@@ -24,3 +24,5 @@
 - [20. browser-storage](/frontend/javascript/20_browser-storage)
 - [21. BOM和DOM](/frontend/javascript/21_BOM和DOM)
 - [22. 防抖和节流](/frontend/javascript/22_防抖和节流)
+- [23. 深拷贝](/frontend/javascript/23_深拷贝)
+- [24_事件总线](/frontend/javascript/24_事件总线)

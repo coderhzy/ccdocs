@@ -7,23 +7,6 @@ export function rootDir() {
       items: [
         {text: "阅读须知", link: "/guide"},
         {text: "学习圈子", link: "/zsxq"},
-        // {
-        //   text: "23 年每周学习动态",
-        //   items: [
-        //     {
-        //       text: "内容介绍",
-        //       link: "/weekly/guide",
-        //     },
-        //     {
-        //       text: "3 月",
-        //       link: "/weekly/202303",
-        //     },
-        //     {
-        //       text: "4 月",
-        //       link: "/weekly/202304",
-        //     },
-        //   ],
-        // },
       ],
     },
     {
@@ -40,12 +23,8 @@ export function rootDir() {
       text: "📘 TS 学习",
       collapsed: false,
       items: [
-        {text: "导读", link: "/ts/ch"},
-        {text: "环境配置", link: "/ts/ch0"},
-        {text: "基础操作", link: "/ts/ch1"},
-        {text: "工具类", link: "/ts/ch2"},
-        {text: "函数系统", link: "/ts/ch3"},
-        {text: "泛型", link: "/ts/ch4"},
+        {text: "导读", link: "/ts/"},
+        {text: "TS工具函数", link: "/ts/01_TS工具函数"},
       ],
     },
     {
@@ -207,6 +186,14 @@ export function sidebarFrontend() {
           text: "22_防抖和节流",
           link: "/frontend/javascript/22_防抖和节流",
         },
+        {
+          text: "23_深拷贝",
+          link: "/frontend/javascript/23_深拷贝",
+        },
+        {
+          text: "24_事件总线",
+          link: "/frontend/javascript/24_事件总线",
+        },
       ],
     },
     {
@@ -325,5 +312,20 @@ export function frontendAlgorithm() {
         },
       ],
     },
+    {
+        text: "栈(stack)",
+        collapsed: false,
+        items: [
+            { text: "快捷导航", link: "/algorithm/stack/" },
+            {
+                text: "01_有效括号",
+                link: "/algorithm/stack/01_有效括号",
+            },
+           {
+                text: "02_使用数组实现Stack",
+                link: "/algorithm/stack/02_使用数组实现Stack",
+            },
+        ]
+    }
   ];
 }
