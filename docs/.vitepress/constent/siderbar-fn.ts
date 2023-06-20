@@ -59,6 +59,10 @@ export function rootDir() {
           text: "Echarts心得",
           link: "/memo/echarts/",
         },
+        {
+          text: "WebStorm快捷键",
+          link: "/memo/WebStorm/",
+        },
       ],
     },
   ];
