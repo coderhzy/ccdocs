@@ -5,6 +5,11 @@
   "packageManager": "pnpm@8.4.0",
   "author": "coderhzy <1257664828@qq.com>",
   "license": "MIT",
+  "scripts": {
+    "docs:dev": "vitepress dev docs --port 8888",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.75"
   },
@@ -18,11 +23,6 @@
     "前端学习路线",
     "前端思维导图"
   ],
-  "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
-  },
   "dependencies": {
     "@algolia/client-search": "^4.17.0",
     "medium-zoom": "^1.0.8",

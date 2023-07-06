@@ -23,23 +23,9 @@ const nav = [
       { text: "📚 前端归档", link: "/frontend/javascript/" },
       { text: "🔙 后端归档", link: "/backend/nodejs/" },
       { text: "🌈 好文收录", link: "/goodArticle/guide/" },
+      { text: "📝 实用工具", link: "/practicalTools/" },
     ],
   },
-  // {
-  //   text: "编程",
-  //   items: [
-  //     { text: "⭐ 资源导航", link: "/favorites" },
-  //     { text: "💻 编程学习", link: "/program/" },
-  //     { text: "🔧 编程工具", link: "/tool/" },
-  //   ],
-  // },
-  // {
-  //   text: "洞见",
-  //   items: [
-  //     { text: "✏️ 随笔", link: "/essay/" },
-  //     { text: "🌱 青葱岁月", link: "/green/ch" },
-  //   ],
-  // },
   {
     text: `v${docsVersion}`,
     items: [

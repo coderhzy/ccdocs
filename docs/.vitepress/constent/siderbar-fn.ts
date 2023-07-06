@@ -65,6 +65,13 @@ export function rootDir() {
         },
       ],
     },
+    {
+      text: "📘 前端之声",
+      collapsed: false,
+      items: [
+        {text: "好用的前端技能", link: "/front-skills/"},
+      ],
+    },
   ];
 }
 
