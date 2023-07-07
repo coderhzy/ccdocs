@@ -127,3 +127,6 @@ const putb64 = (picBase: string, myUptoken: string) => {
 }
 ```
 
+### 2.7 更换二维码库
+
+将二维码库更改为`qrcode`, 从而更方便项目部署.
