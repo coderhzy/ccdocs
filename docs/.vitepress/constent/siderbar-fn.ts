@@ -289,6 +289,7 @@ export function sidebarBackend() {
       items: [
         { text: "导读", link: "/backend/nest/" },
         { text: "01_为什么是nestjs", link: "/backend/nest/01_为什么是nestjs" },
+        { text: "02_nestjs-cicd", link: "/backend/nest/02_nestjs-cicd" },
       ],
     },
   ];
