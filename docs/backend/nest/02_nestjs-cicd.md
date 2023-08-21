@@ -179,6 +179,8 @@ jobs:
 > setting -> Code and automation -> Actions -> Runners -> Add runner -> Linux -> 选择自己的系统 -> 下载对应的runner -> 解压 -> 运行
 > 注意: 这一步跟着github的步骤走,名字要起的与github actions中的一致, 这样当你提交代码的时候(main分支), github actions就会自动运行了, 并将任务托管给runner, 从而完成服务器上的配置
 
+
+
 ## X: 注意点
 
 ### 1. How to fix docker: Got permission denied while trying to connect to the Docker daemon socket
@@ -196,3 +198,14 @@ sudo chmod 666 /var/run/docker.sock
 参考[解决办法](https://github.com/appleboy/ssh-action/issues/80)
 
 
+### 持续部署,docker会报错
+
+```shell
+docker rmi -f $(docker images -qa)  #强制删除所有docker-images
+
+docker rmi -f id #强制删除指定的docker-images
+
+docker ps -a #查看所有的容器
+
+docker container ls -a #查看所有的容器
+```

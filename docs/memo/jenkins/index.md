@@ -6,7 +6,7 @@
 
 在传统的开发模式中，开发的整个过程是按部就班就行：
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtt2wf9lezj60xc0b40u102.jpg" alt="早期的开发模式" style="zoom:67%;" />
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211720627.png)
 
 但是这种模式存在很大的弊端：
 
@@ -17,9 +17,11 @@
 
 DevOps是Development和Operations两个词的结合，将开发和运维结合起来的模式：
 
-![打开格局](https://tva1.sinaimg.cn/large/008i3skNgy1gtt32mnaj8j60k007ngmc02.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211721353.png)
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtt33f78kdj60fk0fkgmc02.jpg" alt="DevOps模式" style="zoom:67%;" />
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211721396.png)
+
+
 
 ### 1.3. 持续集成和持续交付
 
@@ -30,17 +32,17 @@ DevOps是Development和Operations两个词的结合，将开发和运维结合�
 
 持续集成CI：
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtt3bgnnvbj60rs0c8dgu02.jpg" alt="持续集成" style="zoom:67%;" />
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211721786.png)
 
 持续交付和持续部署：
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtt3da1cd2j60rs0kkmz602.jpg" alt="持续交付" style="zoom:67%;" />
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211722668.png)
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtt3dtbewsj60rs0kk76a02.jpg" alt="持续部署" style="zoom:67%;" />
+
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211723549.png)
 
 ### 1.4. 自动化部署流程
-
-![自动化部署的流程](https://tva1.sinaimg.cn/large/008i3skNgy1gtt5buus2kj60wu0lgq7002.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211723532.png)
 
 ## 二. 购买云服务器
 
@@ -66,21 +68,19 @@ DevOps是Development和Operations两个词的结合，将开发和运维结合�
 
 1.来到控制台：
 
-![image-20201204152032769](https://tva1.sinaimg.cn/large/0081Kckwgy1glbumqekwhj31ct0p8grl.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211723593.png)
 
 2.创建实例，选择类型和配置
 
-![image-20201204152133800](/Users/coderwhy/Library/Application Support/typora-user-images/image-20201204152133800.png)
-
-![image-20201203103047329](/Users/coderwhy/Library/Application Support/typora-user-images/image-20201203103047329.png)
 
 3.配置网络安全组
 
-![image-20201203103725892](https://tva1.sinaimg.cn/large/0081Kckwgy1glagts0xxuj31at0nyq87.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211724724.png)
 
 4.创建实例
 
-![image-20201203104249296](https://tva1.sinaimg.cn/large/0081Kckwgy1glagzdiwnpj31bk0o5433.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211724445.png)
+
 
 ## 三. 搭建服务器环境
 
@@ -148,7 +148,7 @@ systemctl enable jenkins
 
 Jenkins默认使用8080端口提供服务，所以需要加入到安全组中：
 
-![image-20201204173117359](https://tva1.sinaimg.cn/large/0081Kckwgy1glbyeoz6tqj315w0bzmzj.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211725367.png)
 
 #### 3.1.3. Jenkins用户
 
@@ -156,7 +156,7 @@ Jenkins默认使用8080端口提供服务，所以需要加入到安全组中：
 
 修改文件的路径：`/etc/sysconfig/jenkins`
 
-![image-20210825162827962](https://tva1.sinaimg.cn/large/008i3skNgy1gtt46oxg53j60n00aw75302.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211725879.png)
 
 之后需要重启一下Jenkins：
 
@@ -174,27 +174,23 @@ systemctl restart jenkins
 
 * 在下面的地址中 `cat /var/lib/jenkins/secrets/initialAdminPassword`
 
-![image-20201203173047824](/Users/coderwhy/Library/Application Support/typora-user-images/image-20201203173047824.png)
-
 可以安装推荐的插件：
 
-![安装推荐的插件](https://tva1.sinaimg.cn/large/0081Kckwgy1glbylb26ouj30fb082js7.jpg)
-
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211725071.png)
 #### 3.1.5. Jenkins任务
 
 **新建任务：**
 
-![新建任务](https://tva1.sinaimg.cn/large/0081Kckwgy1glc0uinjzej30pa0fet9z.jpg)
-
-![image-20201204185613061](https://tva1.sinaimg.cn/large/0081Kckwgy1glc0v225vaj30wl0hkn05.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211726309.png)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211726520.png)
 
 **配置项目和保留策略：**
 
-![image-20210825160744119](https://tva1.sinaimg.cn/large/008i3skNgy1gtt3l4fjm6j614p0d2dgl02.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211726124.png)
 
 **源码管理：**
 
-![image-20210825160818122](https://tva1.sinaimg.cn/large/008i3skNgy1gtt3lpcvtgj614k0j8jsn02.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211726799.png)
 
 **构建触发器：**
 
@@ -222,8 +218,7 @@ H 9 * * 1-5
 H/30 8-20/4 * * 1,3,5
 ```
 
-![触发器](https://tva1.sinaimg.cn/large/008i3skNgy1gtt419gw6tj614g0agmy402.jpg)
-
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211727823.png)
 **构建环境：**
 
 注意：我们需要搭建Node的环境
@@ -231,18 +226,16 @@ H/30 8-20/4 * * 1,3,5
 * 第一步：配置Node的环境；
 * 第二步：安装Node的插件；
 
-![image-20201204190055096](https://tva1.sinaimg.cn/large/0081Kckwgy1glc0zyecd4j31ar0ecjuz.jpg)
-
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211727333.png)
 第一步：配置Node的环境
 
-![node环境](https://tva1.sinaimg.cn/large/008i3skNgy1gtt42elwduj614h0elwfq02.jpg)
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211727432.png)
 
 第二步：安装Node的插件
 
 * 这里因为我已经安装过了，所以没有搜索到；
 
-![image-20201204185949452](https://tva1.sinaimg.cn/large/0081Kckwgy1glc0yta64bj30r907caam.jpg)
-
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211727008.png)
 构建执行的任务：
 
 * 查看Node的版本等是否有问题；
@@ -270,8 +263,7 @@ rm -rf /root/mall_cms/*
 cp -rf ./dist/* /root/mall_cms/
 ```
 
-![执行构建任务](https://tva1.sinaimg.cn/large/008i3skNgy1gtt43sz933j614o0dy0tk02.jpg)
-
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211727758.png)
 ### 3.2. nginx安装和配置
 
 #### 3.2.1. 安装nginx
@@ -296,8 +288,7 @@ systemctl enable nginx
 
 配置用户：
 
-![image-20210825163329209](https://tva1.sinaimg.cn/large/008i3skNgy1gtt4bwvxc4j60f30453yk02.jpg)
-
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211728942.png)
 通过Linux命令创建文件夹和文件：
 
 ```shell
@@ -310,7 +301,6 @@ vi index.html
 
 配置访问目录：
 
-![image-20210825163406566](https://tva1.sinaimg.cn/large/008i3skNgy1gtt4cka6hgj60n00bwgmc02.jpg)
-
+![](https://imgsbed-1301560453.cos.ap-shanghai.myqcloud.com//blog202308211728630.png)
 
 
