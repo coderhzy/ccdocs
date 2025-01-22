@@ -3,9 +3,12 @@ import { description, docsVersion, github, keywords, name, site } from "./meta";
 import sidebar from "./sidebar";
 import nav from "./nav";
 
+// 根据环境变量设置 base，确保 GitHub Pages 使用正确的路径
+const base = process.env.DEPLOY_ENV === 'gh-pages' ? '/ccdocs/' : '/';
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/',
+  base,
   title: name,
   description,
   lastUpdated: true,
@@ -15,7 +18,7 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: "/ccdocs-logo.svg",
+    logo: base + "ccdocs-logo.svg",
     outline: "deep",
     docFooter: {
       prev: "上一篇",
@@ -51,9 +54,9 @@ export default defineConfig({
       { name: "apple-mobile-web-app-status-bar-style", content: "default" },
     ],
 
-    ["link", { rel: "shortcut icon", href: "/favicon.ico" }],
-    ["link", { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    ["link", { rel: "mask-icon", href: "/ccdocs-logo.svg", color: "#06f" }],
+    ["link", { rel: "shortcut icon", href: base + "favicon.ico" }],
+    ["link", { rel: "icon", type: "image/x-icon", href: base + "favicon.ico" }],
+    ["link", { rel: "mask-icon", href: base + "ccdocs-logo.svg", color: "#06f" }],
     ["meta", { name: "theme-color", content: "#06f" }],
 
     [
@@ -61,7 +64,7 @@ export default defineConfig({
       {
         rel: "apple-touch-icon",
         sizes: "120x120",
-        href: "/images/icons/apple-touch-icon.png",
+        href: base + "images/icons/apple-touch-icon.png",
       },
     ],
   ],
