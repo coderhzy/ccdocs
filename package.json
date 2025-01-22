@@ -12,7 +12,9 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.6.1"
+    "vitepress": "^1.6.1",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   },
   "keywords": [
     "react 专栏",

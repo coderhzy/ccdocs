@@ -5,6 +5,7 @@ import nav from "./nav";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/ccdocs/',
   title: name,
   description,
   lastUpdated: true,
