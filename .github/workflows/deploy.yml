@@ -4,6 +4,10 @@ on:
     branches:
       - main # 或者你的默认分支名
 
+# 添加权限配置
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -34,3 +38,4 @@ jobs:
           folder: docs/.vitepress/dist # 构建输出目录
           branch: gh-pages # 部署到的分支
           token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 自动生成的 token
+          clean: true # 添加此选项以清理旧的构建文件
