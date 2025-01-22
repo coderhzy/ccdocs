@@ -19,7 +19,7 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 20.x
       - run: pnpm install
 
       - name: Build
@@ -29,5 +29,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
-          cname: www.codehzy.cn
           publish_dir: docs/.vitepress/dist

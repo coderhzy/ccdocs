@@ -1,6 +1,7 @@
 {
   "name": "ccdocs",
   "version": "0.0.1",
+  "type": "module",
   "main": "index.js",
   "packageManager": "pnpm@8.4.0",
   "author": "coderhzy <1257664828@qq.com>",
@@ -11,7 +12,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.75"
+    "vitepress": "^1.6.1"
   },
   "keywords": [
     "react 专栏",

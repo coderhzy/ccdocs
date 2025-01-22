@@ -40,3 +40,11 @@ const KEY = '123456'
 
 const result = sign('hello', KEY)
 ```
+
+## 4. 老项目package.json配置存在冲突，如何启动项目
+
+```javascript
+npm install--legacy-peer-deps
+```
+
+- 项目中两个不同的包依赖同一个包的不同版本，按照新的 peerDependencies 机制，npm 可能无法自动处理这种情况而报错。
