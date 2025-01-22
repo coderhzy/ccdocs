@@ -21,7 +21,7 @@ hero:
       link: /zsxq
     - theme: alt
       text: 备用站点
-      link: https://main--dancing-dango-bc1810.netlify.app/
+      link: https://codehzy.netlify.app/
 features:
   - icon: 📋
     title: 面试专栏

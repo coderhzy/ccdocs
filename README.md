@@ -46,7 +46,7 @@ Front-end learning document collection
 
 ## 🔋 备用站点
 
-如果因网络或其它因素访问不了主站，可以访问 [对应 netlify 站点](https://main--dancing-dango-bc1810.netlify.app/)，内容是同步的。
+如果因网络或其它因素访问不了主站，可以访问 [对应 netlify 站点](https://codehzy.netlify.app/)，内容是同步的。
 
 ## ⭐ Star History
 

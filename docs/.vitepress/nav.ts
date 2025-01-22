@@ -31,7 +31,7 @@ const nav = [
     items: [
       {
         text: "🔋 备用站点",
-        link: "https://main--dancing-dango-bc1810.netlify.app/",
+        link: "https://codehzy.netlify.app/",
       },
       { text: "🧱 参与贡献", link: "/contributing" },
       { text: "🎉 更新日志", link: `${github}/releases` },
