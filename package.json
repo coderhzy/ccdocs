@@ -27,6 +27,8 @@
   "dependencies": {
     "@algolia/client-search": "^4.17.0",
     "medium-zoom": "^1.0.8",
-    "vue": "^3.2.47"
+    "vue": "^3.3.0",
+    "@vueuse/core": "^10.7.0",
+    "@vueuse/shared": "^10.7.0"
   }
 }
